@@ -1,0 +1,17 @@
+
+$primary-color:#44001A;
+$secondary-color:#b15b5b;
+
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+
+$logo-font-family: 'Architects Daughter';
+$page-font-family: 'Lato', sans-serif;
+
+//override bootstrap
+$theme-colors: map-merge(
+  (
+    "primary": #b15b5b
+  ),$theme-colors
+);
