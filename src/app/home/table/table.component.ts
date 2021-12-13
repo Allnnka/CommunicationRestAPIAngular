@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/shared/user.payload';
 
 @Component({
@@ -9,13 +9,14 @@ import { User } from 'src/app/shared/user.payload';
 export class TableComponent implements OnInit {
 
   @Input() users:Array<User>;
+  @Output() deleteUserIdEvent = new EventEmitter<number>();
   constructor(){}
 
   ngOnInit(): void {
   
   }
-  deleteItem(){
-    
+  deleteItem(event){
+    this.deleteUserIdEvent.emit(event);
   }
   
 }

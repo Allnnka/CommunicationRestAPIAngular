@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     newItem.id=this.users.length+1;
     this.users.push(newItem);
   }
-  deleteBrainiac(id:number){
-    this.users= this.users.filter(el=>el.id!==id);
+  deleteBrainiac(event){
+    this.users= this.users.filter(el=>el.id!==event);
   }
 }
