@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from 'src/app/shared/user.payload';
-import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: 'app-table',
@@ -10,18 +8,14 @@ import { UserService } from 'src/app/shared/user.service';
 })
 export class TableComponent implements OnInit {
 
-  users:Array<User>=[];
-  constructor(private router:Router, private userService:UserService) { }
+  @Input() users:Array<User>;
+  constructor(){}
 
   ngOnInit(): void {
-    this.userService.getAllUsers().subscribe(
-      user=>{
-        this.users=user.data;
-      },
-      error => {},
-      () => { 
-        console.log(this.users);
-      }
-    );
-  } 
+  
+  }
+  deleteItem(){
+    
+  }
+  
 }

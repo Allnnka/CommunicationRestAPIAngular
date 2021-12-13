@@ -3,5 +3,11 @@
 <td>{{user.first_name}}</td>
 <td>{{user.last_name}}</td>
 <td>{{user.email}}</td>
-<td><i class="fas fa-edit text-primary"></i></td>
-<td><i class="fas fa-trash-alt text-primary"></i></td>
+<td>
+    <button type="button" class="btn p-0 m-0">
+        <i  class="fas fa-edit text-primary"></i>
+    </button>
+</td>
+<td> 
+    <button type="button" class="btn p-0 m-0" (click)="deleteBrainiac(user.id)"> <i class="fas fa-trash-alt text-primary"></i></button> 
+</td>

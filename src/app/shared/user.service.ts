@@ -17,5 +17,8 @@ export class UserService {
   createUser(userPayload:UserRequestPayload):Observable<any>{
     return this.http.post('https://reqres.in/api/users',userPayload);
   }
+  deleteUser(id:number):Observable<any>{
+    return this.http.delete('https://reqres.in/api/users');
+  }
   
 }

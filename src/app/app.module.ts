@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddBrainiacComponent } from './home/add-brainiac/add-brainiac.component';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    ReactiveFormsModule
   ],
   entryComponents:[
     AddBrainiacComponent

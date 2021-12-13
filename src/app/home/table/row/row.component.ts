@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from 'src/app/shared/user.payload';
+import { UserService } from 'src/app/shared/user.service';
 
 @Component({
   selector: '[table-row]',
@@ -9,9 +10,17 @@ import { User } from 'src/app/shared/user.payload';
 export class RowComponent implements OnInit {
 
   @Input() user:User;
+  @Output() deleteUserIdEvent = new EventEmitter<number>();
 
-  constructor() { }
+
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+  }
+  deleteBrainiac(id:number){
+    this.userService.deleteUser(id).subscribe(()=>{
+      console.log("Delete brainiac by id: "+id); 
+      this.deleteUserIdEvent.emit(id);
+    });
   }
 }

@@ -1,6 +1,6 @@
 export interface UserRequestPayload{
-    firstName:string;
-    lastName:string;
+    first_name:String;
+    last_name:String;
     email:string;
 }
 
