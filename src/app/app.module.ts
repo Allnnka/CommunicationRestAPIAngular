@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddBrainiacComponent } from './home/add-brainiac/add-brainiac.component';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,10 @@ import { AddBrainiacComponent } from './home/add-brainiac/add-brainiac.component
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgbModule
+  ],
+  entryComponents:[
+    AddBrainiacComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

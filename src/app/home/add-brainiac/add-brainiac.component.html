@@ -1,1 +1,44 @@
-<p>add-brainiac works!</p>
+<div class="modal-header">
+  <h3 class="modal-title" id="exampleModalLongTitle">Add new brainiac</h3>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+    <form [formGroup]="brainiacForm">
+      <div class="row">
+        <div class="col">
+          <span>First name<span class="text-danger"> *</span></span>
+          <div>
+            <input id="firstName" type="text" [formControlName]="'firstName'">
+            <span *ngIf="!brainiacForm.get('firstName').valid && brainiacForm.get('firstName').touched">
+              Please provide a valid first name!
+            </span>
+          </div>
+        </div>
+        <div class="col">
+          <span>Last name<span class="text-danger"> *</span></span>
+          <div>
+            <input id="lastName" type="text" [formControlName]="'lastName'">
+            <span *ngIf="!brainiacForm.get('lastName').valid && brainiacForm.get('lastName').touched">
+              Please provide a valid last name!
+            </span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <span>Email<span class="text-danger"> *</span></span>
+        <div>
+          <input id="email" type="text" [formControlName]="'email'">
+          <span *ngIf="!brainiacForm.get('email').valid && brainiacForm.get('email').touched">
+            Please provide a valid E-mail!
+          </span>
+        </div>
+      </div>
+    </form>
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <button type="button" class="btn btn-primary">Save</button>
+</div>
