@@ -33,7 +33,6 @@ export class HomeComponent implements OnInit {
     );
   } 
   addBrainiac(user:User) {
-    user.id=this.users.length+1;
     this.users.push(user);
   }
   deleteBrainiac(id:number){
