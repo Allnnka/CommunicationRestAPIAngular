@@ -5,40 +5,33 @@
   </button>
 </div>
 <div class="modal-body">
-    <form [formGroup]="brainiacForm">
+    <form (ngSubmit)="addBrainiac()" class="brainiacForm" [formGroup]="brainiacForm">
       <div class="row">
         <div class="col">
-          <span>First name<span class="text-danger"> *</span></span>
-          <div>
-            <input id="firstName" type="text" [formControlName]="'firstName'">
-            <span *ngIf="!brainiacForm.get('firstName').valid && brainiacForm.get('firstName').touched">
-              Please provide a valid first name!
-            </span>
-          </div>
+          <label for="firstName" class="control-label required">First name <span class="text-danger"> *</span></label>
+          <input type="text" id="firstName" class="form-control" formControlName="firstName">
+          <span class="text-danger" *ngIf="!brainiacForm.get('firstName').valid && brainiacForm.get('firstName').touched">
+            Please provide a valid first name!
+          </span>
         </div>
         <div class="col">
-          <span>Last name<span class="text-danger"> *</span></span>
-          <div>
-            <input id="lastName" type="text" [formControlName]="'lastName'">
-            <span *ngIf="!brainiacForm.get('lastName').valid && brainiacForm.get('lastName').touched">
-              Please provide a valid last name!
-            </span>
-          </div>
-        </div>
-      </div>
-      <div>
-        <span>Email<span class="text-danger"> *</span></span>
-        <div>
-          <input id="email" type="text" [formControlName]="'email'">
-          <span *ngIf="!brainiacForm.get('email').valid && brainiacForm.get('email').touched">
-            Please provide a valid E-mail!
+          <label for="lastName" class="control-label required">Last name <span class="text-danger"> *</span></label>
+          <input type="text" id="lastName" class="form-control" formControlName="lastName">
+          <span class="text-danger" *ngIf="!brainiacForm.get('lastName').valid && brainiacForm.get('lastName').touched">
+            Please provide a valid last name!
           </span>
         </div>
       </div>
+      <div class="col p-0 mb-5">
+        <label for="email" class="control-label required">E-mail <span class="text-danger"> *</span></label>
+        <input type="text" id="email" class="form-control" formControlName="email">
+        <span class="text-danger" *ngIf="!brainiacForm.get('email').valid && brainiacForm.get('email').touched">
+          Please provide a valid E-mail!
+        </span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" (click)="activeModal.close('Close click')" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>      
     </form>
-
-</div>
-<div class="modal-footer">
-  <button type="submit button" (click)="activeModal.close('Close click')" class="btn btn-secondary" data-dismiss="modal">Close</button>
-  <button type="button" (click)="addBrainiac()" class="btn btn-primary">Save</button>
 </div>
