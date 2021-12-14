@@ -13,10 +13,9 @@ export class TableComponent implements OnInit {
   constructor(){}
 
   ngOnInit(): void {
-  
+    
   }
   deleteItem(event){
     this.deleteUserIdEvent.emit(event);
   }
-  
 }

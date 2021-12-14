@@ -11,6 +11,6 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let user of users" table-row [user]="user" (deleteUserIdEvent)="deleteItem($event)"></tr>
+        <tr *ngFor="let user of users" table-row [user]="user" (deleteUserIdEvent)="deleteItem($event)" ></tr>
     </tbody>
 </table>

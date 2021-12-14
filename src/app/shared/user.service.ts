@@ -20,5 +20,7 @@ export class UserService {
   deleteUser(id:number):Observable<any>{
     return this.http.delete('https://reqres.in/api/users');
   }
-  
+  editUser(userPayload:UserRequestPayload):Observable<any>{
+    return this.http.put('https://reqres.in/api/users',userPayload);
+  }
 }
