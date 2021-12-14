@@ -1,16 +1,18 @@
-<table class="table table-striped">
-    <thead class="bg-secondary">
-      <tr>
-        <th scope="col">Id</th>
-        <th></th>
-        <th scope="col">First name</th>
-        <th scope="col">Last name</th>
-        <th scope="col">E-mail</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of users" table-row [user]="user" (deleteUserIdEvent)="deleteItem($event)" ></tr>
-    </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-striped">
+      <thead class="bg-secondary">
+        <tr class="text-white">
+          <th scope="col">Id</th>
+          <th></th>
+          <th scope="col">First name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">E-mail</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of users" table-row [user]="user" (deleteUserIdEvent)="deleteItem($event)" ></tr>
+      </tbody>
+  </table>
+</div>

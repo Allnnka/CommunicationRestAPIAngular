@@ -8,3 +8,8 @@
         }
     }
 }
+@include small{
+    .home{
+        font-size: 0.7rem;
+    }
+}

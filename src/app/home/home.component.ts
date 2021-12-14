@@ -33,6 +33,13 @@ export class HomeComponent implements OnInit {
     );
   } 
   addBrainiac(user:User) {
+    let lastId=1;
+    this.users.map(u=>{
+      if(u.id>lastId){
+        lastId=u.id;
+      }
+    })
+    user.id=++lastId;
     this.users.push(user);
   }
   deleteBrainiac(id:number){

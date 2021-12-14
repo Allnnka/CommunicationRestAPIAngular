@@ -23,6 +23,9 @@ export class RowComponent implements OnInit {
       this.userService.deleteUser(id).subscribe(()=>{
         console.log("Delete brainiac by id: "+id); 
         this.deleteUserIdEvent.emit(id);
+      },
+      error=>{
+        console.log("Error in delete brainiac by id: "+id);
       });
     }
   }
